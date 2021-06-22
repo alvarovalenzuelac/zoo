@@ -1,48 +1,22 @@
-class Animal:
-    def __init__(self, nombre, edad, salud,felicidad) -> None:
-        self.nombre = nombre
-        self.edad = edad
-        self.salud = salud
-        self.felicidad = felicidad
-    
-    def display_info(self):
-        print(f"Nombre:{self.nombre}. Salud:{self.salud}. Felicidad:{self.felicidad}")
+from animal import Ardilla, Loro, Orangutan
+
+class Zoo:
+    def __init__(self,zoo_name) -> None:
+        self.animals = []
+        self.zoo_name = zoo_name
+    def add_loro(self,name):
+        self.animals.append(Loro(name))
         return self
-    
-    def alimentar(self):
-        self.edad += 10
-        self.felicidad += 10
+    def add_ardilla(self,name):
+        self.animals.append(Ardilla(name))
         return self
-    
-class Loro(Animal):
-    def __init__(self, nombre,edad=5,salud=60,felicidad=60) -> None:
-        super().__init__(nombre,edad,salud,felicidad)
-        self.frases_conocidas = []
-    
-    def alimentar(self):
-        self.edad += 5
-        self.felicidad += 5
+    def add_orangutan(self,name):
+        self.animals.append(Orangutan(name))
         return self
-    
-    def agregar_frase(self,frase):
-        self.frases_conocidas.append(frase)
+    def print_all_info(self):
+        print(f"*** {self.zoo_name} ***")
+        for a in self.animals:
+            a.display_info()
         return self
 
-class Ardilla(Animal):
-    def __init__(self, nombre,edad=2,salud=80,felicidad=80) -> None:
-        super().__init__(nombre,edad,salud,felicidad)
-        self.nueces_escondidas = 0
-    
-    def guardar_nueces(self,num):
-        self.nueces_escondidas += num
-        return self
-    
-    def alimentar(self):
-        self.edad += 3
-        self.felicidad += 3
-        return self
-
-class Orangutan(Animal):
-    def __init__(self, nombre,edad=5,salud=70,felicidad=70) -> None:
-        super().__init__(nombre,edad,salud,felicidad)
-        self.simbolo_senas = False
+zoo1 = Zoo("Maravillozoo").add_ardilla("Chip").add_loro("Pirata").add_orangutan("Mauricio").print_all_info()
