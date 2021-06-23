@@ -6,11 +6,11 @@ class Animal:
         self.felicidad = felicidad
     
     def display_info(self):
-        print(f"Nombre:{self.nombre}. Salud:{self.salud}. Felicidad:{self.felicidad}")
+        print(f"Nombre:{self.nombre} Salud:{self.salud} Felicidad:{self.felicidad}")
         return self
     
     def alimentar(self):
-        self.edad += 10
+        self.salud += 10
         self.felicidad += 10
         return self
     
@@ -20,7 +20,7 @@ class Loro(Animal):
         self.frases_conocidas = []
     
     def alimentar(self):
-        self.edad += 5
+        self.salud += 5
         self.felicidad += 5
         return self
     
@@ -38,7 +38,7 @@ class Ardilla(Animal):
         return self
     
     def alimentar(self):
-        self.edad += 3
+        self.salud += 3
         self.felicidad += 3
         return self
 
@@ -48,7 +48,7 @@ class Orangutan(Animal):
         self.simbolo_senas = False
     
     def alimentar(self):
-        self.edad += 3
+        self.salud += 3
         self.felicidad += 3
         return self
     
