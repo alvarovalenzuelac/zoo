@@ -6,7 +6,7 @@ class Animal:
         self.felicidad = felicidad
     
     def display_info(self):
-        print(f"Nombre:{self.nombre} Salud:{self.salud} Felicidad:{self.felicidad}")
+        print(f"Nombre: {self.nombre} Salud: {self.salud} Felicidad: {self.felicidad}")
         return self
     
     def alimentar(self):
